@@ -1,21 +1,32 @@
-# 🚀 Raushonix AI — Autonomous Placement Engine
+# 🚀 AutoJob-AI — Autonomous LinkedIn & Naukri Auto-Apply Bot
 
 > **Next-Generation Autonomous Career Dispatcher & Intelligent Job Application Assistant**  
+> *1-Click Auto-Apply for **LinkedIn Easy Apply** & **Naukri.com** with **ATS Resume Matching**, **Smart Question Answering**, and **Real-Time Web Dashboard**.*  
 > *Engineered by Abhiraj Raushan*
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-Automated%20Browser-45ba4b.svg?logo=playwright&logoColor=white)](https://playwright.dev/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Easy%20Apply%20Bot-0A66C2.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![Naukri](https://img.shields.io/badge/Naukri.com-1--Click%20Apply-275DF5.svg)](https://www.naukri.com/)
 [![Web UI](https://img.shields.io/badge/Web%20Dashboard-Port%205000-61dafb.svg)](http://localhost:5000)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20%26%20Isolated-success.svg)](#-privacy--local-session-isolation)
+[![Stars](https://img.shields.io/github/stars/Abhirajraushan/AI_Automation_tool?style=social)](https://github.com/Abhirajraushan/AI_Automation_tool/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](#license)
 
 ---
 
-## 🌟 Overview
+## 🌟 Overview & Search Highlights
 
-**Raushonix AI** is a fully autonomous, local placement engine designed to automate end-to-end applications across **LinkedIn (Easy Apply)** and **Naukri.com (1-Click & Chat Apply)**. 
+**AutoJob-AI (Raushonix AI)** is an open-source, local-first autonomous application bot designed to eliminate repetitive job hunting on **LinkedIn (Easy Apply)** and **Naukri.com (1-Click & Chat Apply)**. 
 
-Equipped with an **NLP Resume Parser**, **Intelligent Screening Question Engine**, and a **Real-Time Web Dashboard**, Raushonix AI dynamically tailors application questions (CTC, notice period, experience, relocation, tech stacks), matches candidate ATS scores, fast-skips previously applied postings, and logs every dispatch to a comprehensive Audit Ledger.
+### Why AutoJob-AI Stands Out:
+* 🤖 **Autonomous Multi-Channel Dispatch**: Applies to dozens of relevant tech postings in minutes across LinkedIn and Naukri.
+* 📄 **Instant Resume Vectorization**: Drag-and-drop any `.pdf` or `.docx` resume; the NLP parser extracts skills, experience, and contact details in seconds.
+* 🎯 **Dynamic ATS Match Scoring**: Analyzes recruiter job descriptions and scores each role (0–100%) against candidate competencies.
+* 🧠 **Adaptive Screening Question Engine**: Automatically answers complex questions (CTC auto-scaling in LPA/INR, notice period, work authorization, relocation, tech stack experience).
+* ⚡ **Smart Fast-Skip**: Detects previously applied postings and closed requisitions instantly to avoid wasted applications.
+* 🖥️ **Modern Web Dashboard**: Real-time diagnostic console, candidate profile matrix, and live audit ledger running on `http://localhost:5000`.
+* 🛡️ **Zero Cloud Tracking**: All sessions, tokens, resumes, and databases stay **strictly on your local machine**.
 
 ---
 
@@ -41,7 +52,7 @@ Review every dispatched application with exact timestamps, ATS match scores, and
 ![Application Audit Ledger](docs/images/2_audit_ledger.png)
 
 #### Features on this Screen:
-* **Comprehensive Audit Trail**: Shows Company Name, Position Title, Location, and Channel.
+* **Comprehensive Audit Trail**: Shows Company Name (Google, Microsoft, Amazon, Atlassian, Razorpay, etc.), Position Title, Location, and Channel.
 * **ATS Match Score**: Computes the match percentage between your resume and the recruiter's job description.
 * **Execution Status**: Distinguishes between `applied`, `already_applied` (fast-skipped), and `skipped`.
 * **Export CSV Ledger**: One-click download of your entire application history to a clean `.csv` file.
@@ -100,7 +111,7 @@ flowchart TD
 
 ## 👥 Can Anyone Else Use This? (100% Plug-and-Play)
 
-**YES! Raushonix AI is fully multi-user and privacy-agnostic.**
+**YES! AutoJob-AI is fully multi-user and privacy-agnostic.**
 
 When anyone clones this repository:
 1. **Zero Personal Data Leakage**: The repository contains **no personal resumes**, **no credentials**, **no session cookies**, and **no application history**.
@@ -147,8 +158,8 @@ python -u run_web.py
 
 ### Step 2: Set Screening Answers
 * In the **Fast Screening Auto-Answers** section, enter your:
-  * **Expected CTC** (e.g. `10` LPA)
-  * **Current CTC** (e.g. `5` LPA)
+  * **Expected CTC** (e.g. `12` LPA)
+  * **Current CTC** (e.g. `6` LPA)
   * **Notice Period** (e.g. `30 Days`)
   * **Relocation** (e.g. `Yes, Open`)
 * Click **Save Search & Screening Parameters**.
@@ -191,7 +202,7 @@ python -m src.main outreach --pending 1
 
 ## 🛡️ Privacy & Local Session Isolation
 
-Raushonix AI is architected with strict privacy guarantees:
+AutoJob-AI is architected with strict privacy guarantees:
 * **Zero Cloud Tracking**: All browser automation, form parsing, and database records run **strictly on your localhost**.
 * **Airtight `.gitignore`**: All resumes (`*.pdf`, `*.docx`), persistent Chrome profiles (`data/chrome-profile-*`), local application history (`data/applications.db`), and API keys (`config/.env`) are strictly excluded from git tracking.
 * **Independent Session Profiles**: Naukri and LinkedIn sessions run in separate Chrome sandbox directories so multiple accounts never cross-contaminate.
@@ -230,6 +241,14 @@ Raushonix AI is architected with strict privacy guarantees:
 
 ---
 
+## 🏷️ GitHub Topics & SEO Tags
+
+Add these topics in your GitHub repository settings under **About ⚙️** for top ranking on Google and GitHub search:
+
+`linkedin-auto-apply` · `naukri-auto-apply` · `job-application-bot` · `linkedin-bot` · `naukri-bot` · `job-hunter` · `playwright-python` · `ats-score` · `resume-matcher` · `job-automation` · `python-automation` · `easy-apply`
+
+---
+
 ## 📄 License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
@@ -237,5 +256,5 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 ---
 
 <p align="center">
-  <b>Raushonix AI</b> — Engineered with precision by <b>Abhiraj Raushan</b>
+  <b>AutoJob-AI (Raushonix)</b> — Engineered with precision by <b>Abhiraj Raushan</b>
 </p>
