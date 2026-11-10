@@ -1297,8 +1297,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!naukriRecentActionsList) return;
     
     // Phase 1 updates
-    if (naukriActiveCvName) naukriActiveCvName.textContent = "resume_1794289309_Resume__Abhiraj_raushan.pdf";
-    if (naukriCvMeta) naukriCvMeta.textContent = "Uploaded Today (Nov 10, 2026) · Full-Stack Developer";
+    if (naukriActiveCvName) naukriActiveCvName.textContent = activeResumeName || "Active_Resume.pdf";
+    if (naukriCvMeta) naukriCvMeta.textContent = "Uploaded Recently · Active Candidate Profile";
     
     const roleFocusEl = document.querySelector("#tab-dashboard .grid-2col-responsive > div:first-child div:nth-child(3) div:first-child div:last-child");
     if (roleFocusEl) roleFocusEl.textContent = "Full-Stack & Systems";
@@ -1344,7 +1344,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title: qa.topic,
           date: "Calibrated for Active Profile",
           status: "Verified & Guarded",
-          attached_resume: "resume_1794289309_Resume__Abhiraj_raushan.pdf (Full-Stack Developer Resume)",
+          attached_resume: activeResumeName || "Active_Resume.pdf",
           job_description: `LinkedIn screening question: "${qa.q}" is pre-configured to answer "${qa.a}" automatically. This ensures your LinkedIn applications are never held up by manual forms.`,
           tech_stack: ["Python", "Go", "React", "Spring Boot", "Docker", "SQL", "REST APIs"],
           questions_answers: [
@@ -1356,7 +1356,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { q: "Languages known?", a: "English & Hindi (Fluent / Native). Zero regional languages." }
           ],
           interview_tips: [
-            "Be prepared to explain your 2 years of software development experience at IIT Bhubaneswar.",
+            "Be prepared to explain your core software engineering and systems experience.",
             "Emphasize your technical stack: Python, Go, and React full-stack architectures.",
             "State your notice period as 30 days and expected CTC as 8 LPA consistently."
           ]
@@ -1384,7 +1384,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (intelHeaderTitle) intelHeaderTitle.textContent = "LinkedIn Easy Apply & Screening Intelligence";
       renderLinkedInIntelligence();
-      showToast("Switched to LinkedIn Easy Apply Intelligence · Armed Resume: resume_1794289309_Resume__Abhiraj_raushan.pdf", "info");
+      showToast("Switched to LinkedIn Easy Apply Intelligence · Armed Resume: " + (activeResumeName || "Active_Resume.pdf"), "info");
     } else {
       activePlatform = "naukri";
       if (btnIntelChannelNaukri) {
@@ -1525,7 +1525,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (dossierResumeName) {
-      dossierResumeName.textContent = app.attached_resume || cachedNaukriData?.active_resume || "resume_1794222054_Abhiraj_______Resume.pdf (Backend Resume)";
+      dossierResumeName.textContent = app.attached_resume || cachedNaukriData?.active_resume || "Active_Resume.pdf";
     }
 
     if (dossierLocation) dossierLocation.textContent = app.location || "Flexible / On-Site & Hybrid";

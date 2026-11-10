@@ -13,35 +13,63 @@
 
 ## 🌟 Overview
 
-**Raushonix AI** is a fully autonomous, local job placement engine designed to automate end-to-end applications across **LinkedIn (Easy Apply)** and **Naukri.com (1-Click & Chat Apply)**. 
+**Raushonix AI** is a fully autonomous, local placement engine designed to automate end-to-end applications across **LinkedIn (Easy Apply)** and **Naukri.com (1-Click & Chat Apply)**. 
 
 Equipped with an **NLP Resume Parser**, **Intelligent Screening Question Engine**, and a **Real-Time Web Dashboard**, Raushonix AI dynamically tailors application questions (CTC, notice period, experience, relocation, tech stacks), matches candidate ATS scores, fast-skips previously applied postings, and logs every dispatch to a comprehensive Audit Ledger.
 
 ---
 
-## 📸 Interactive Web Dashboard (`http://localhost:5000`)
+## 📸 Web Dashboard Walkthrough & Features
 
-```
-+----------------------------------------------------------------------------------------------------+
-| ⚡ Raushonix AI                                [ Radar Dispatch ] [ Audit Ledger ] [ Settings ]    |
-|   Autonomous Placement Engine                   ● Naukri Connected  ● LinkedIn Connected           |
-+----------------------------------------------------------------------------------------------------+
-| [1] RESUME & PROFILE INTELLIGENCE              | [4] FAST SCREENING AUTO-ANSWERS                    |
-|   ┌────────────────────────────────────────┐   |   Expected CTC (LPA): [ 8 ]  Current: [ 4 ]        |
-|   |   📂 Drop PDF or DOCX Resume Here      |   |   Notice Period: [ 30 Days ] Relocation: [ Yes ]   |
-|   |   Instant NLP extraction of skills     |   |   [ Save Search & Screening Parameters ]           |
-|   └────────────────────────────────────────┘   +----------------------------------------------------+
-|   Active: resume_v2.pdf · 2 Yrs Exp · 35 Skills| [5] AUTONOMOUS DISPATCH CONTROLLER                 |
-+------------------------------------------------+   Channel: [ Naukri.com ] [ LinkedIn ] [ Unified ] |
-| [2] HIRING CHANNEL AUTHENTICATION              |   Application Quota: ──●───────── [ 10 Jobs ]      |
-|   [N] Naukri.com       [ Authenticated ✔ ]     |   [✔] Autonomous Mode  [ ] Dry Run Simulation      |
-|   [in] LinkedIn        [ Authenticated ✔ ]     |   [ 🚀 LAUNCH AUTONOMOUS APPLY ]                   |
-+------------------------------------------------+----------------------------------------------------+
-| [3] REAL-TIME DIAGNOSTIC FEED                                                                       |
-|   [15:08:07] ✔ [LINKEDIN] Applied: Zemoso Technologies — Senior Software Engineer (Match: 100%)    |
-|   [15:09:28] ✔ [LINKEDIN] Applied: Luxoft — Full Stack Engineer (Java+React) (Match: 100%)          |
-+----------------------------------------------------------------------------------------------------+
-```
+### 1. Radar Dispatch & Autonomous Controller
+The central mission control for configuring applications, monitoring live dispatches, and managing hiring channel sessions:
+
+![Radar Dispatch Dashboard](docs/images/1_radar_dispatch.png)
+
+#### Core Components on this Screen:
+* **Resume & Profile Intelligence**: Drag-and-drop any `.pdf` or `.docx` resume. The NLP engine extracts your name, skills, experience, and contact information, binding it as the active candidate document.
+* **Fast Screening Auto-Answers**: Configure your compensation and availability preferences (Expected CTC, Current CTC, Notice Period, Relocation) with a single click.
+* **Hiring Channel Authentication**: Independent login cards for **Naukri.com** and **LinkedIn Easy Apply**. One click opens an isolated Chrome window to log in safely.
+* **Autonomous Dispatch Controller**: Choose your channel (**Naukri**, **LinkedIn**, or **Unified**), adjust the quota slider (e.g., 5 to 50 jobs), and click **🚀 Launch Autonomous Apply**.
+* **Real-Time Diagnostic Feed**: Live console streaming every action, question answered, and application result.
+
+---
+
+### 2. Application Audit Ledger & ATS Tracking
+Review every dispatched application with exact timestamps, ATS match scores, and direct job links:
+
+![Application Audit Ledger](docs/images/2_audit_ledger.png)
+
+#### Features on this Screen:
+* **Comprehensive Audit Trail**: Shows Company Name, Position Title, Location, and Channel.
+* **ATS Match Score**: Computes the match percentage between your resume and the recruiter's job description.
+* **Execution Status**: Distinguishes between `applied`, `already_applied` (fast-skipped), and `skipped`.
+* **Export CSV Ledger**: One-click download of your entire application history to a clean `.csv` file.
+* **View Posting**: Direct link to open the live job requisition on LinkedIn or Naukri.
+
+---
+
+### 3. Candidate Profile & Competency Matrix
+Inspect how the engine vectorized your technical background:
+
+![Candidate Profile](docs/images/3_candidate_profile.png)
+
+#### Features on this Screen:
+* **Executive Profile Overview**: Displays your detected name, current title, and education.
+* **Skills Inventory**: Visual pill badges showing all technical competencies extracted from your resume (languages, frameworks, databases, cloud tools).
+* **Target Roles**: Automatically inferred job categories based on your detected skill clusters.
+
+---
+
+### 4. Engine Settings & Session Persistence
+Manage browser state and privacy controls:
+
+![Engine Settings](docs/images/4_engine_settings.png)
+
+#### Features on this Screen:
+* **Session Persistence**: Explains the local Chrome profile sandbox structure.
+* **Purge Saved Browser Session & Cookies**: Easily reset stored cookies and login tokens if you wish to switch accounts or refresh authentication.
+* **Operational Protocols**: Details on NLP parsing, ATS matching rules, and form automation logic.
 
 ---
 
@@ -85,8 +113,8 @@ When anyone clones this repository:
 ## 🚀 Quickstart Guide
 
 ### 1. Prerequisites
-- **Python 3.10** or higher installed ([Download Python](https://www.python.org/downloads/))
-- **Google Chrome** installed (or Chromium)
+* **Python 3.10** or higher installed ([Download Python](https://www.python.org/downloads/))
+* **Google Chrome** installed (or Chromium)
 
 ### 2. Clone the Repository
 ```bash
@@ -94,48 +122,46 @@ git clone https://github.com/Abhirajraushan/AI_Automation_tool.git
 cd AI_Automation_tool
 ```
 
-### 3. Install Dependencies
+### 3. Automated 1-Click Setup (For Non-Technical Users)
+Simply double-click:
+```text
+setup.bat
+```
+*This automatically installs all dependencies, sets up the browser engine, and opens the Web Dashboard in your browser!*
+
+*(Or via command line):*
 ```bash
 pip install -r requirements.txt
 playwright install chromium
-```
-
-### 4. Launch the Web Dashboard
-Double-click **`start_ui.bat`** or run:
-```bash
 python -u run_web.py
 ```
-*Your browser will automatically open to:* **`http://localhost:5000`**
+*Your browser will open automatically at:* **`http://localhost:5000`**
 
 ---
 
 ## 🛠️ How to Use (Step-by-Step)
 
 ### Step 1: Upload Your Resume
-- In the Web Dashboard under **Resume & Profile Intelligence**, drag and drop your resume (`.pdf` or `.docx`).
-- The NLP engine immediately parses your:
-  - Technical skills & proficiencies
-  - Total years of industry experience
-  - Contact details (email, phone, location)
-  - Target job requisitions (Backend, Full Stack, Cybersecurity, etc.)
+* In the Web Dashboard under **Resume & Profile Intelligence**, drag and drop your resume (`.pdf` or `.docx`).
+* The NLP engine immediately extracts your skills, experience, and target roles.
 
-### Step 2: Authenticate Channels (One-Time)
-- Click **"Re-authenticate"** for **Naukri.com** or **LinkedIn Easy Apply**.
-- A dedicated browser window will open.
-- Log in to your account. Your authenticated session is encrypted and stored locally in isolated Chrome profiles.
+### Step 2: Set Screening Answers
+* In the **Fast Screening Auto-Answers** section, enter your:
+  * **Expected CTC** (e.g. `10` LPA)
+  * **Current CTC** (e.g. `5` LPA)
+  * **Notice Period** (e.g. `30 Days`)
+  * **Relocation** (e.g. `Yes, Open`)
+* Click **Save Search & Screening Parameters**.
 
-### Step 3: Launch Autonomous Apply
-- Select your target channel (**Naukri**, **LinkedIn**, or **Unified**).
-- Set your quota slider (e.g. 5, 10, or 25 postings).
-- Click **🚀 Launch Autonomous Apply**.
-- Watch the live application stream in the **Diagnostic Feed**!
+### Step 3: Authenticate Channels (One-Time)
+* Click **"Re-authenticate"** for **Naukri.com** or **LinkedIn Easy Apply**.
+* A dedicated browser window will open. Log in normally. Your session is saved securely on your local computer.
 
-### Step 4: Audit Ledger & Analytics
-- Navigate to the **Audit Ledger** tab to review:
-  - Applied company names, positions, and locations
-  - ATS match score percentages
-  - Exact screening question answers submitted
-  - Export audit trail to CSV anytime
+### Step 4: Launch Autonomous Apply
+* Select your target channel (**Naukri**, **LinkedIn**, or **Unified**).
+* Move the slider to set your application limit (e.g., `10` postings).
+* Click **🚀 Launch Autonomous Apply**.
+* Watch the live progress in the **Diagnostic Feed** and review results in the **Audit Ledger**!
 
 ---
 
@@ -166,9 +192,9 @@ python -m src.main outreach --pending 1
 ## 🛡️ Privacy & Local Session Isolation
 
 Raushonix AI is architected with strict privacy guarantees:
-- **Zero Cloud Tracking**: All browser automation, form parsing, and database records run **strictly on your localhost**.
-- **Airtight `.gitignore`**: All resumes (`*.pdf`, `*.docx`), persistent Chrome profiles (`data/chrome-profile-*`), local application history (`data/applications.db`), and API keys (`config/.env`) are strictly excluded from git tracking.
-- **Independent Session Profiles**: Naukri and LinkedIn sessions run in separate Chrome sandbox directories so multiple accounts never cross-contaminate.
+* **Zero Cloud Tracking**: All browser automation, form parsing, and database records run **strictly on your localhost**.
+* **Airtight `.gitignore`**: All resumes (`*.pdf`, `*.docx`), persistent Chrome profiles (`data/chrome-profile-*`), local application history (`data/applications.db`), and API keys (`config/.env`) are strictly excluded from git tracking.
+* **Independent Session Profiles**: Naukri and LinkedIn sessions run in separate Chrome sandbox directories so multiple accounts never cross-contaminate.
 
 ---
 
@@ -176,9 +202,12 @@ Raushonix AI is architected with strict privacy guarantees:
 
 ```
 ├── run_web.py                 # Web Dashboard Server (Aiohttp + WebSockets on port 5000)
+├── setup.bat                  # 1-Click Automated Setup Wizard (Installs everything + launches)
 ├── start_ui.bat               # 1-Click Windows Launcher for Web Dashboard
 ├── requirements.txt           # Python dependencies (Playwright, Aiohttp, PyPDF, etc.)
 ├── .gitignore                 # Strict privacy exclusion filters
+├── docs/
+│   └── images/                # High-definition Web Dashboard UI screenshots
 ├── config/
 │   ├── profile.example.yaml   # Template candidate profile config
 │   ├── search.yaml            # Job search matrix, keyword queries, and daily limits
@@ -198,17 +227,6 @@ Raushonix AI is architected with strict privacy guarantees:
 │   └── web/                   # Web application server, REST APIs, and UI assets
 └── data/                      # Local-only folder (Resumes, Sessions, SQLite DB) [IGNORED]
 ```
-
----
-
-## 🤝 Contributing
-
-Contributions, feature requests, and suggestions are welcome!
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 
