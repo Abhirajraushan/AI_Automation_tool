@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raushonix AI — Autonomous Placement & Career Engine</title>
+  <link rel="stylesheet" href="/static/css/style.css?v=20261110_insights">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236366f1%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polygon points=%2213 2 3 14 12 14 11 22 21 10 12 10 13 2%22/></svg>">
+</head>
+<body>
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="app-navbar">
+    <div class="brand-wrapper">
+      <div class="brand-emblem">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+      <div class="brand-titles">
+        <div class="brand-logo-text">
+          <span>Raushonix</span>
+          <span class="brand-tag">AI</span>
+        </div>
+        <div class="brand-subtitle-text">Autonomous Placement Engine · Engineered by Abhiraj Raushan</div>
+      </div>
+    </div>
+
+    <!-- Center Navigation Tabs -->
+    <nav class="nav-pill-cluster">
+      <button class="nav-tab-btn active" data-tab="tab-dashboard">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        <span>Radar Dispatch</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-history">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>Audit Ledger</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-profile">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;flex-shrink:0;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Candidate Profile</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-settings">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;flex-shrink:0;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span>Engine Settings</span>
+      </button>
+    </nav>
+
+    <!-- Telemetry Badges -->
+    <div class="telemetry-tray">
+      <button id="btn-top-stop" class="btn-core btn-danger-rose" style="display: none; padding: 6px 14px; font-size: 12px; font-weight: 800; animation: pulse 2s infinite;">
+        🛑 Stop Automation
+      </button>
+      <div id="badge-naukri" class="chip-status chip-status-warning">
+        <span class="dot-beacon"></span> Naukri: Checking...
+      </div>
+      <div id="badge-linkedin" class="chip-status chip-status-warning">
+        <span class="dot-beacon"></span> LinkedIn: Checking...
+      </div>
+      <div id="badge-applied-today" class="chip-status chip-status-neutral">
+        <span class="dot-beacon"></span> Today: <span id="count-applied-today" style="margin-left: 4px; font-weight: 800;">0</span> Dispatched
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN VIEWPORT ================= -->
+  <main class="app-viewport">
+
+    <!-- ================= TAB 1: RADAR DISPATCH ================= -->
+    <section id="tab-dashboard" class="tab-view active">
+
+      <!-- Executive Overview Banner -->
+      <div class="dashboard-kpi-deck">
+        <div class="kpi-pitch">
+          <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span class="proprietary-pill">Proprietary AI System</span>
+            <span style="font-size: 12px; color: var(--text-tertiary);">Invented & Engineered by <b>Abhiraj Raushan</b></span>
+          </div>
+          <h1>Raushonix AI — Autonomous Placement & Career Engine</h1>
+          <p>
+            Autonomous placement architecture engineered by Abhiraj Raushan for college students and engineers. Vectorizes candidate resumes, binds target locations, and submits high-match applications end-to-end.
+          </p>
+        </div>
+        <div class="kpi-cards-grid">
+          <div class="kpi-widget">
+            <div id="hero-stat-total" class="kpi-val">0</div>
+            <div class="kpi-lbl">Total Dispatched</div>
+          </div>
+          <div class="kpi-widget">
+            <div id="hero-stat-skills" class="kpi-val">0</div>
+            <div class="kpi-lbl">Profiled Skills</div>
+          </div>
+          <div class="kpi-widget">
+            <div class="kpi-val" style="color: #818cf8;">75%+</div>
+            <div class="kpi-lbl">ATS Threshold</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 2-PHASE MULTI-CHANNEL RECRUITER & RESUME INTELLIGENCE ================= -->
+      <div class="panel-card" style="margin-bottom: 24px; border: 1px solid rgba(99, 102, 241, 0.28); background: radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.08) 0%, rgba(13, 17, 23, 0.95) 70%);">
+        
+        <!-- Multi-Channel Radar Tabs -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 14px; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="panel-step-badge" style="background: rgba(99,102,241,0.2); color: #818cf8; border-color: rgba(99,102,241,0.4);">LIVE</span>
+              <h2 style="margin: 0; font-size: 17px; font-weight: 700; color: #f1f5f9; display: flex; align-items: center; gap: 8px;">
+                <span id="intel-header-title">Naukri Recruiter & Active CV Intelligence</span>
+                <span id="intel-header-status" class="chip-status chip-status-success" style="font-size: 11px; padding: 2px 8px;">Synchronized</span>
+              </h2>
+            </div>
+            <!-- Channel Switcher Buttons -->
+            <div style="display: flex; gap: 8px;" id="intel-channel-switchers">
+              <button type="button" id="btn-intel-channel-naukri" class="btn-core" style="padding: 5px 12px; font-size: 11.5px; font-weight: 700; background: rgba(99, 102, 241, 0.25); border: 1px solid rgba(99, 102, 241, 0.55); color: #c7d2fe; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">
+                🔵 Naukri Radar & Recruiter Views
+              </button>
+              <button type="button" id="btn-intel-channel-linkedin" class="btn-core" style="padding: 5px 12px; font-size: 11.5px; font-weight: 600; background: rgba(148, 163, 184, 0.1); border: 1px solid rgba(148, 163, 184, 0.25); color: #94a3b8; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">
+                🔗 LinkedIn Easy Apply & Screening Intelligence
+              </button>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span id="naukri-last-fetched-text" style="font-size: 11.5px; color: #64748b;">Fetched: Today</span>
+            <button id="btn-fetch-naukri-insights" class="btn-core" style="background: rgba(99, 102, 241, 0.18); border: 1px solid rgba(99, 102, 241, 0.45); color: #c7d2fe; padding: 7px 14px; font-size: 12px; font-weight: 700;">
+              ⚡ Fetch Recruiter Actions
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-Phase Grid Layout -->
+        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 18px;" class="grid-2col-responsive">
+          
+          <!-- Phase 1: Active Resume on Naukri -->
+          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #38bdf8;">PHASE 1 · ATTACHED RESUME</span>
+              <span id="naukri-cv-badge" class="chip-status chip-status-success" style="font-size: 11px;">Active on Naukri</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; margin-bottom: 14px;">
+              <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: #38bdf8; flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+              <div style="min-width: 0;">
+                <div id="naukri-active-cv-name" style="font-size: 13.5px; font-weight: 700; color: #f8fafc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                  resume_1794222054_Abhiraj_______Resume.pdf
+                </div>
+                <div id="naukri-cv-meta" style="font-size: 11.5px; color: #94a3b8; margin-top: 2px;">
+                  Uploaded on Nov 09, 2026 · Software Engineer (Backend)
+                </div>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
+              <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px;">
+                <div style="font-size: 11px; color: #64748b; font-weight: 600;">Role Focus</div>
+                <div style="font-size: 12.5px; color: #e2e8f0; font-weight: 700; margin-top: 2px;">Backend & Systems</div>
+              </div>
+              <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px;">
+                <div style="font-size: 11px; color: #64748b; font-weight: 600;">Core Tech</div>
+                <div style="font-size: 12.5px; color: #34d399; font-weight: 700; margin-top: 2px;">Java, Go, Python</div>
+              </div>
+            </div>
+
+            <button id="btn-sync-active-cv" class="btn-core" style="width: 100%; justify-content: center; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #7dd3fc; font-size: 12px; font-weight: 700;">
+              🔄 Re-Sync Active Resume to Naukri Profile
+            </button>
+          </div>
+
+          <!-- Phase 2: Recruiter Actions & HR Views Tracker -->
+          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #a78bfa;">PHASE 2 · RECRUITER ACTIONS & VIEWS</span>
+              <span class="chip-status chip-status-neutral" style="font-size: 11px;" id="naukri-updates-badge">12 Updates</span>
+            </div>
+
+            <!-- Recruiter Telemetry 3-Stat Quad -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;">
+              <div style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; text-align: center;">
+                <div id="stat-naukri-recruiter-actions" style="font-size: 20px; font-weight: 800; color: #a78bfa;">12</div>
+                <div style="font-size: 11px; color: #94a3b8; font-weight: 600;">Recruiter Actions</div>
+              </div>
+              <div style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; text-align: center;">
+                <div id="stat-naukri-total-applies" style="font-size: 20px; font-weight: 800; color: #38bdf8;">252</div>
+                <div style="font-size: 11px; color: #94a3b8; font-weight: 600;">Naukri Applies</div>
+              </div>
+              <div style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; text-align: center;">
+                <div id="stat-naukri-shortlist-status" style="font-size: 20px; font-weight: 800; color: #34d399;">Active</div>
+                <div style="font-size: 11px; color: #94a3b8; font-weight: 600;">HR Pipeline</div>
+              </div>
+            </div>
+
+            <!-- Recruiter Action Filter Pills & List -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+              <div style="font-size: 11.5px; font-weight: 700; color: #94a3b8;">Recruiter Activity & Views:</div>
+              <div style="display: flex; gap: 6px;" id="naukri-view-filters">
+                <button type="button" id="filter-viewed-only" class="btn-core" style="padding: 4px 10px; font-size: 11px; background: rgba(52, 211, 153, 0.2); border: 1px solid rgba(52, 211, 153, 0.55); color: #34d399; font-weight: 700; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">
+                  👁️ Viewed by HR (<span id="count-viewed-filter">12</span>)
+                </button>
+                <button type="button" id="filter-all-applies" class="btn-core" style="padding: 4px 10px; font-size: 11px; background: rgba(148, 163, 184, 0.1); border: 1px solid rgba(148, 163, 184, 0.25); color: #94a3b8; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.2s ease;">
+                  All Submissions (<span id="count-all-filter">257</span>)
+                </button>
+              </div>
+            </div>
+            <div id="naukri-recent-actions-list" style="max-height: 155px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding-right: 4px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; font-size: 11.5px;">
+                <div style="min-width: 0; padding-right: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-weight: 700; color: #f1f5f9; font-size: 12.5px;">Relevance Lab</span>
+                    <span style="font-size: 10.5px; color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 4px; padding: 1px 6px; font-weight: 600;">📅 Nov 09, 2026</span>
+                  </div>
+                  <div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">Agentic AI Forward Deployed Engineer | Bhubaneswar</div>
+                </div>
+                <div style="flex-shrink: 0;"><span class="chip-status chip-status-success" style="font-size: 10px; padding: 2px 8px; background: rgba(52, 211, 153, 0.18); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35);">👁️ Viewed by HR</span></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; font-size: 11.5px;">
+                <div style="min-width: 0; padding-right: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-weight: 700; color: #f1f5f9; font-size: 12.5px;">Tech Mahindra</span>
+                    <span style="font-size: 10.5px; color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 4px; padding: 1px 6px; font-weight: 600;">📅 Nov 09, 2026</span>
+                  </div>
+                  <div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">Service Delivery Consultant</div>
+                </div>
+                <div style="flex-shrink: 0;"><span class="chip-status chip-status-success" style="font-size: 10px; padding: 2px 8px; background: rgba(52, 211, 153, 0.18); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35);">👁️ Viewed by HR</span></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(30, 41, 59, 0.55); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; font-size: 11.5px;">
+                <div style="min-width: 0; padding-right: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-weight: 700; color: #f1f5f9; font-size: 12.5px;">Medpace Clinical Research India</span>
+                    <span style="font-size: 10.5px; color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 4px; padding: 1px 6px; font-weight: 600;">📅 Nov 09, 2026</span>
+                  </div>
+                  <div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">Database Programmer - Core Laboratory</div>
+                </div>
+                <div style="flex-shrink: 0;"><span class="chip-status chip-status-success" style="font-size: 10px; padding: 2px 8px; background: rgba(52, 211, 153, 0.18); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35);">👁️ Viewed by HR</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Live Telemetry Radar HUD (Active during apply) -->
+      <div id="live-monitor-box" class="telemetry-radar-hud">
+        <div class="hud-top-bar">
+          <div class="hud-active-chip">
+            <span class="dot-beacon dot-beacon-pulse"></span>
+            <span id="live-task-text">Autonomous Pipeline In Flight</span>
+          </div>
+          <button id="btn-stop-apply" class="btn-core btn-danger-rose">
+            🛑 Abort Pipeline
+          </button>
+        </div>
+
+        <!-- Job In Focus Slate -->
+        <div class="hud-focus-card">
+          <div>
+            <div id="job-card-title" class="hud-job-role">Scanning hiring network...</div>
+            <div id="job-card-company" class="hud-job-company">Connecting to Portal Feed</div>
+            <div id="job-card-status" class="hud-job-state">
+              Evaluating candidate competencies against role requirements
+            </div>
+          </div>
+          <div class="hud-score-display">
+            <div id="job-card-score" class="hud-score-number">--</div>
+            <div class="hud-score-sub">ATS Match Index</div>
+          </div>
+        </div>
+
+        <!-- 4-Stat Metric Quad -->
+        <div class="hud-stats-quad">
+          <div class="hud-stat-cell">
+            <div id="counter-checked" class="hud-stat-num" style="color: #60a5fa;">0</div>
+            <div class="hud-stat-label">Jobs Evaluated</div>
+          </div>
+          <div class="hud-stat-cell">
+            <div id="counter-applied" class="hud-stat-num" style="color: #34d399;">0</div>
+            <div class="hud-stat-label">Successfully Applied</div>
+          </div>
+          <div class="hud-stat-cell">
+            <div id="counter-skipped" class="hud-stat-num" style="color: #fbbf24;">0</div>
+            <div class="hud-stat-label">Skipped (Low ATS Match)</div>
+          </div>
+          <div class="hud-stat-cell">
+            <div id="counter-failed" class="hud-stat-num" style="color: #f87171;">0</div>
+            <div class="hud-stat-label">Errors / Inactive</div>
+          </div>
+        </div>
+
+        <!-- Live Browser Window Mockup Frame -->
+        <div class="browser-window-mockup">
+          <div class="browser-mockup-header">
+            <div class="browser-traffic-lights">
+              <span class="traffic-light traffic-close"></span>
+              <span class="traffic-light traffic-min"></span>
+              <span class="traffic-light traffic-max"></span>
+            </div>
+            <div class="browser-address-bar" id="mockup-address-bar">
+              https://www.naukri.com/active-job-session
+            </div>
+            <span class="chip-status chip-status-success" style="font-size: 10px; padding: 2px 8px;">LIVE MIRROR 🔴</span>
+          </div>
+          <div class="browser-screen-frame">
+            <img id="live-screen-img" src="" alt="Live Browser Telemetry" style="display: none;">
+            <div id="live-screen-placeholder" style="color: var(--text-tertiary); font-size: 13px; text-align: center; padding: 36px;">
+              <span>🌐 Edge/Chrome is actively rendering on your screen. Live viewport screenshots stream here.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Console Stream -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-tertiary);">
+            ⚡ Real-Time Diagnostic Feed
+          </span>
+          <button id="btn-clear-logs" class="btn-core btn-outline-slate" style="padding: 4px 10px; font-size: 11px;">
+            Clear Feed
+          </button>
+        </div>
+        <div id="console-stream" class="terminal-view-box"></div>
+      </div>
+
+      <!-- Modern Balanced 2-Column Command Workspace Grid -->
+      <div class="dashboard-workspace-grid">
+
+        <!-- COLUMN 1: Profile & Hiring Channels -->
+        <div class="workspace-column">
+
+          <!-- STEP 1: Intelligent Resume Profiler -->
+          <div class="card-slate">
+            <div>
+              <div class="card-slate-header">
+                <div class="step-label-group">
+                  <span class="step-badge">1</span>
+                  <h2 class="card-slate-title">Resume & Profile Intelligence</h2>
+                </div>
+                <span id="resume-badge-status" class="chip-status chip-status-warning">No Resume Loaded</span>
+              </div>
+
+              <!-- Compact Drag & Drop Upload Zone -->
+              <div id="upload-zone" class="dropzone-box">
+                <svg width="26" height="26" class="dropzone-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:26px;height:26px;display:block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <div class="dropzone-title">Drop PDF or DOCX resume here</div>
+                <div class="dropzone-desc">Instant NLP extraction of candidate credentials, skills, and experience</div>
+                <input type="file" id="resume-file-input" style="display: none;" accept=".pdf,.docx">
+              </div>
+
+              <!-- Parsed Metadata Panel -->
+              <div id="resume-details-box" class="resume-intel-box">
+
+                <!-- Executive Candidate Identity Card -->
+                <div class="candidate-profile-summary-card">
+                  <div class="candidate-avatar-badge">AR</div>
+                  <div class="candidate-meta-details">
+                    <div class="candidate-name-row">
+                      <span id="preview-name" class="candidate-full-name">Abhiraj Raushan</span>
+                      <span class="verified-pill">✓ Profiled</span>
+                    </div>
+                    <div id="preview-company-title" class="candidate-role-headline">
+                      Software Developer (Cybersecurity & Systems) at Indian Institute of Technology (IIT) Bhubaneswar
+                    </div>
+                    <div class="candidate-tag-chips">
+                      <span class="id-pill" id="preview-experience" style="color: #60a5fa;">2 Years of Experience</span>
+                      <span class="id-pill" id="preview-city">Bhubaneswar</span>
+                      <span class="id-pill" id="preview-education">B.E. Computer Science (CGPA: 7.88 / 78.8%)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Secondary Contact Strip -->
+                <div class="candidate-contact-strip">
+                  <div class="contact-item">
+                    <span class="intel-k">Email:</span>
+                    <span id="preview-email" class="intel-v">--</span>
+                  </div>
+                  <div class="contact-item">
+                    <span class="intel-k">Phone:</span>
+                    <span id="preview-phone" class="intel-v">--</span>
+                  </div>
+                </div>
+
+                <!-- Dedicated File Lock Indicator -->
+                <div class="active-file-lock-capsule">
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="color: #34d399; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">🔒 Active Document Bound:</span>
+                    <span style="color: #a7f3d0; font-size: 10px; font-weight: 600;">Exact file submitted to portals</span>
+                  </div>
+                  <div id="preview-active-file" class="file-path-code">--</div>
+                </div>
+
+                <!-- One-Click Naukri Profile Sync Button -->
+                <button id="btn-sync-naukri-resume" class="btn-core btn-outline-slate" style="width: 100%; margin-top: 10px; font-size: 11px; padding: 8px 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                  <span>🔄 Sync Active Document to Naukri.com Profile</span>
+                </button>
+                <div id="sync-naukri-status" style="font-size: 11px; margin-top: 4px; display: none;"></div>
+
+                <!-- Multi-Resume Version History Selector -->
+                <div style="margin-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 10px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">📂 Resume Version Library:</span>
+                    <span id="resume-count-badge" style="font-size: 10px; color: var(--text-tertiary);">0 Available</span>
+                  </div>
+                  <div id="resume-history-list" class="resume-history-scroll-box"></div>
+                </div>
+
+                <div style="margin-top: 12px;">
+                  <span class="intel-k">Profiled Competencies (<span id="skill-count-badge">0</span> detected):</span>
+                  <div id="skills-badge-container" class="competency-cluster"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Dual Network Channels -->
+          <div class="card-slate">
+            <div>
+              <div class="card-slate-header">
+                <div class="step-label-group">
+                  <span class="step-badge">2</span>
+                  <h2 class="card-slate-title">Hiring Channel Authentication</h2>
+                </div>
+                <span style="font-size: 10px; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em;">Persistent Session</span>
+              </div>
+
+              <div class="channel-list">
+                <!-- Naukri Card -->
+                <div class="channel-card">
+                  <div class="channel-id-box">
+                    <div class="channel-logo-square naukri-gradient">N</div>
+                    <div>
+                      <div class="channel-name">Naukri.com</div>
+                      <div class="channel-sub">High-volume corporate, tech, and MNC requisitions</div>
+                    </div>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <span id="naukri-card-status" class="chip-status chip-status-danger">Disconnected</span>
+                    <button id="btn-login-naukri" class="btn-core btn-outline-slate" style="font-size: 12px; padding: 6px 12px;">
+                      Authenticate
+                    </button>
+                  </div>
+                </div>
+
+                <!-- LinkedIn Card -->
+                <div class="channel-card">
+                  <div class="channel-id-box">
+                    <div class="channel-logo-square linkedin-gradient">in</div>
+                    <div>
+                      <div class="channel-name">LinkedIn Easy Apply</div>
+                      <div class="channel-sub">Direct 1-click submission to tier-1 startups and tech leaders</div>
+                    </div>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <span id="linkedin-card-status" class="chip-status chip-status-danger">Disconnected</span>
+                    <button id="btn-login-linkedin" class="btn-core btn-outline-slate" style="font-size: 12px; padding: 6px 12px;">
+                      Authenticate
+                    </button>
+                  </div>
+                </div>
+
+                <div class="session-isolation-notice">
+                  🔒 <b>Local Session Isolation:</b> Log in once in the browser window. Auth tokens and cookies remain safely encrypted in your local browser profile.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMN 2: Target Strategy & Dispatch Controller -->
+        <div class="workspace-column">
+
+          <!-- STEP 3: Algorithmic Target Matrix -->
+          <div class="card-slate">
+            <div>
+              <div class="card-slate-header">
+                <div class="step-label-group">
+                  <span class="step-badge">3</span>
+                  <h2 class="card-slate-title">Target Roles & Filtering Matrix</h2>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label-text">Target Job Roles (Matched with resume):</label>
+                <input type="text" id="input-keywords" class="input-control" placeholder="e.g. Software Engineer, Backend Developer, Java Developer">
+                <div style="margin-top: 8px;" class="role-chip-group">
+                  <button class="role-tag-btn" data-role="Software Engineer">Software Engineer</button>
+                  <button class="role-tag-btn" data-role="Backend Developer">Backend Developer</button>
+                  <button class="role-tag-btn" data-role="Frontend Developer">Frontend Developer</button>
+                  <button class="role-tag-btn" data-role="Java Developer">Java Developer</button>
+                  <button class="role-tag-btn" data-role="Golang Developer">Golang Developer</button>
+                  <button class="role-tag-btn" data-role="Python Developer">Python Developer</button>
+                  <button class="role-tag-btn" data-role="Full Stack Developer">Full Stack</button>
+                  <button class="role-tag-btn" data-role="Cybersecurity Analyst">Cybersecurity Analyst</button>
+                  <button class="role-tag-btn" data-role="Graduate Engineer Trainee">Graduate Engineer Trainee</button>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div class="form-field">
+                  <label class="form-label-text">Experience Tier:</label>
+                  <select id="select-experience" class="input-control">
+                    <option value="0">0 Years (Fresher / College Student / Trainee)</option>
+                    <option value="1">1 Year of Experience</option>
+                    <option value="2">2 Years of Experience</option>
+                    <option value="3">3 Years of Experience</option>
+                    <option value="4">4 Years of Experience</option>
+                    <option value="5">5+ Years of Experience (Senior)</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label-text">Posting Recency:</label>
+                  <select id="select-days" class="input-control">
+                    <option value="1">Past 24 Hours (Fresh)</option>
+                    <option value="3">Past 3 Days</option>
+                    <option value="7" selected>Past 7 Days (Recommended)</option>
+                    <option value="15">Past 15 Days</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Geographic Target Hubs -->
+              <div class="form-field">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <label class="form-label-text" style="margin-bottom: 0;">Target Locations & Tech Hubs:</label>
+                  <span style="font-size: 11px; color: var(--text-tertiary);">Click hubs to select / unselect</span>
+                </div>
+                <div class="role-chip-group" id="location-hub-chips" style="margin-bottom: 8px;">
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Bengaluru">🏙️ Bengaluru</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Hyderabad">🏙️ Hyderabad</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Pune">🏙️ Pune</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Delhi NCR">🏙️ Delhi NCR</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Mumbai">🏙️ Mumbai</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Chennai">🏙️ Chennai</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="Bhubaneswar">🏙️ Bhubaneswar</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn is-active" data-loc="Remote">🏠 Remote / WFH</button>
+                  <button type="button" class="role-tag-btn loc-tag-btn" data-loc="All India">🌐 All India</button>
+                </div>
+                <input type="text" id="input-location" class="input-control" placeholder='Selected locations: "Bengaluru, Hyderabad, Remote" (or type custom cities)'>
+              </div>
+
+              <!-- Work Mode & Strict Location Filtering -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div class="form-field">
+                  <label class="form-label-text">Work Mode Preference:</label>
+                  <select id="select-work-mode" class="input-control">
+                    <option value="all" selected>All Work Modes (Flexible)</option>
+                    <option value="remote">Remote Only (Work From Home)</option>
+                    <option value="hybrid">Hybrid Only</option>
+                    <option value="onsite">On-Site Only</option>
+                  </select>
+                </div>
+
+                <div class="form-field" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                  <div style="display: flex; align-items: center; gap: 8px; padding-bottom: 6px;">
+                    <input type="checkbox" id="chk-strict-location" checked style="width: 17px; height: 17px; accent-color: var(--accent-emerald); cursor: pointer;">
+                    <label for="chk-strict-location" style="font-size: 12px; font-weight: 600; color: #fff; cursor: pointer;">
+                      Strict Location Match Only
+                    </label>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px; padding-bottom: 6px;">
+                    <input type="checkbox" id="chk-strict-stack" checked style="width: 17px; height: 17px; accent-color: var(--accent-emerald); cursor: pointer;">
+                    <label for="chk-strict-stack" style="font-size: 12px; font-weight: 600; color: #fff; cursor: pointer;">
+                      Strict Target Role Matching Only
+                    </label>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px; padding-bottom: 6px;">
+                    <input type="checkbox" id="chk-skip-external" checked style="width: 17px; height: 17px; accent-color: var(--accent-emerald); cursor: pointer;">
+                    <label for="chk-skip-external" style="font-size: 12px; font-weight: 600; color: #93c5fd; cursor: pointer;">
+                      Skip External Portals (Instant skip Workday)
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fast Screening Parameters Bar -->
+              <div class="screening-box">
+                <div style="font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">
+                  ⚡ Fast Screening Auto-Answers:
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                  <div>
+                    <label style="font-size: 11px; color: var(--text-tertiary); display: block; margin-bottom: 4px;">Expected CTC (LPA)</label>
+                    <input type="number" id="input-fast-expected-ctc" class="input-control" value="8" min="0" max="100" step="0.5" style="padding: 6px 8px; font-size: 12px;">
+                  </div>
+                  <div>
+                    <label style="font-size: 11px; color: var(--text-tertiary); display: block; margin-bottom: 4px;">Current CTC (LPA)</label>
+                    <input type="number" id="input-fast-current-ctc" class="input-control" value="4" min="0" max="100" step="0.5" style="padding: 6px 8px; font-size: 12px;">
+                  </div>
+                  <div>
+                    <label style="font-size: 11px; color: var(--text-tertiary); display: block; margin-bottom: 4px;">Notice Period</label>
+                    <select id="select-fast-notice" class="input-control" style="padding: 6px 8px; font-size: 12px;">
+                      <option value="0">Immediate / 0 Days</option>
+                      <option value="15">15 Days</option>
+                      <option value="30" selected>30 Days</option>
+                      <option value="60">60 Days</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="font-size: 11px; color: var(--text-tertiary); display: block; margin-bottom: 4px;">Relocation</label>
+                    <select id="select-fast-relocate" class="input-control" style="padding: 6px 8px; font-size: 12px;">
+                      <option value="true" selected>Yes, Open</option>
+                      <option value="false">No / Remote Only</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <button id="btn-save-search-prefs" class="btn-core btn-outline-slate" style="width: 100%; font-size: 12px;">
+                💾 Save Search & Screening Parameters
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Autonomous Dispatch Controller -->
+          <div class="card-slate">
+            <div>
+              <div class="card-slate-header">
+                <div class="step-label-group">
+                  <span class="step-badge">4</span>
+                  <h2 class="card-slate-title">Autonomous Dispatch Controller</h2>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label-text">Channel Selection:</label>
+                <div class="role-chip-group">
+                  <button class="role-tag-btn is-active" data-platform="naukri">Naukri.com</button>
+                  <button class="role-tag-btn" data-platform="linkedin">LinkedIn</button>
+                  <button class="role-tag-btn" data-platform="both">Unified (Naukri + LinkedIn)</button>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label-text">Application Quota Limit:</label>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <input type="range" id="slider-limit" min="5" max="100" step="5" value="25" style="flex: 1; accent-color: var(--accent-emerald);">
+                  <span id="val-limit" style="font-weight: 800; font-size: 20px; color: var(--accent-emerald); min-width: 36px;">25</span>
+                  <span style="font-size: 11px; color: var(--text-tertiary);">Postings</span>
+                </div>
+              </div>
+
+              <div class="form-field" style="display: flex; align-items: center; gap: 10px; margin-top: 14px;">
+                <input type="checkbox" id="chk-auto-mode" checked style="width: 18px; height: 18px; accent-color: var(--accent-emerald); cursor: pointer;">
+                <label for="chk-auto-mode" style="font-size: 13px; font-weight: 600; color: #fff; cursor: pointer;">
+                  Autonomous Submission Mode (Auto-Fill & Fast Save)
+                </label>
+              </div>
+
+              <div class="form-field" style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="chk-dry-run" style="width: 18px; height: 18px; accent-color: var(--brand-indigo); cursor: pointer;">
+                <label for="chk-dry-run" style="font-size: 13px; font-weight: 600; color: var(--text-secondary); cursor: pointer;">
+                  Simulation Mode (Dry Run Scoring Without Submission)
+                </label>
+              </div>
+
+              <!-- Pre-flight Verification Card -->
+              <div class="preflight-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="color: var(--text-tertiary);">Armed Application Document:</span>
+                  <span id="armed-resume-filename" style="color: #34d399; font-weight: 700; font-family: monospace;">--</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="color: var(--text-tertiary);">Experience Parameter:</span>
+                  <span id="armed-experience-metric" style="color: #60a5fa; font-weight: 700;">--</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+                  <span style="color: var(--text-tertiary);">Target Locations:</span>
+                  <span id="armed-locations-metric" style="color: #f1f5f9; font-weight: 700;">--</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Grand Launch Action Button -->
+            <div style="margin-top: 16px;">
+              <button id="btn-start-apply" class="btn-core btn-epic-launch" style="width: 100%;">
+                ⚡ Launch Autonomous Apply
+              </button>
+              <button id="btn-stop-apply-card" class="btn-core btn-danger-rose" style="width: 100%; display: none; font-size: 14px; font-weight: 800; padding: 14px 20px;">
+                🛑 Stop Autonomous Apply
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= TAB 2: AUDIT LEDGER ================= -->
+    <section id="tab-history" class="tab-view">
+      <div class="table-card">
+        <div class="card-slate-header">
+          <div>
+            <h2 style="font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.02em;">Application Audit Ledger</h2>
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 2px;">Comprehensive audit trail of dispatched applications, ATS scores, and recruiter interactions</p>
+          </div>
+          <a href="/api/export" class="btn-core btn-primary-indigo" download>
+            📥 Export CSV Ledger
+          </a>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 14px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 280px;">
+            <input type="text" id="history-search-input" class="input-control" placeholder="Search by company, position title, or location...">
+          </div>
+          <div class="role-chip-group">
+            <button class="role-tag-btn is-active" data-filter-status="all">All Records</button>
+            <button class="role-tag-btn" data-filter-status="applied">Submitted Only</button>
+            <button class="role-tag-btn" data-filter-status="skipped">Filtered Out</button>
+          </div>
+          <div class="role-chip-group">
+            <button class="role-tag-btn is-active" data-filter-site="all">All Channels</button>
+            <button class="role-tag-btn" data-filter-site="naukri">Naukri</button>
+            <button class="role-tag-btn" data-filter-site="linkedin">LinkedIn</button>
+          </div>
+        </div>
+
+        <div class="table-scroll-view">
+          <table class="enterprise-data-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Company</th>
+                <th>Position Title</th>
+                <th>Location</th>
+                <th>Channel</th>
+                <th>ATS Match</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body">
+              <tr>
+                <td colspan="8" style="text-align: center; color: var(--text-tertiary); padding: 36px;">
+                  Retrieving application history ledger...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 3: CANDIDATE PROFILE ================= -->
+    <section id="tab-profile" class="tab-view">
+      <div class="card-slate" style="max-width: 900px; margin: 0 auto;">
+        <div class="card-slate-header">
+          <div>
+            <h2 style="font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.02em;">Candidate Knowledge Base</h2>
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 2px;">Profile variables and screening questions utilized by the autonomous form filler</p>
+          </div>
+          <button id="btn-save-full-profile" class="btn-core btn-emerald-apex">
+            💾 Save Profile
+          </button>
+        </div>
+
+        <h3 style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #818cf8; margin-bottom: 12px;">
+          1. Candidate Identification
+        </h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
+          <div class="form-field">
+            <label class="form-label-text">Full Legal Name:</label>
+            <input type="text" id="prof-name" class="input-control">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">Email Address:</label>
+            <input type="email" id="prof-email" class="input-control">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">Contact Number:</label>
+            <input type="text" id="prof-phone" class="input-control">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">Primary City:</label>
+            <input type="text" id="prof-city" class="input-control">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">LinkedIn Profile URL:</label>
+            <input type="url" id="prof-linkedin" class="input-control">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">GitHub Profile URL:</label>
+            <input type="url" id="prof-github" class="input-control">
+          </div>
+        </div>
+
+        <h3 style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #818cf8; margin-bottom: 12px;">
+          2. Verified Competencies & Skills
+        </h3>
+        <div class="form-field">
+          <label class="form-label-text">Add Competency Tag (Type and press Enter):</label>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" id="input-new-skill" class="input-control" placeholder="e.g. Docker, Spring Boot, React, AWS, Golang">
+            <button id="btn-add-skill" class="btn-core btn-outline-slate">Add</button>
+          </div>
+          <div id="profile-skills-cloud" class="competency-cluster" style="margin-top: 14px; max-height: none;"></div>
+        </div>
+
+        <h3 style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #818cf8; margin-top: 24px; margin-bottom: 12px;">
+          3. Recruiter Screening Answers
+        </h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-field">
+            <label class="form-label-text">Total Experience (Years):</label>
+            <input type="number" id="prof-exp-years" class="input-control" min="1" max="20" value="2">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">Notice Period (Days):</label>
+            <input type="number" id="prof-notice-period" class="input-control" value="0">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">Current CTC (LPA):</label>
+            <input type="number" id="prof-current-ctc" class="input-control" value="4">
+          </div>
+          <div class="form-field">
+            <label class="form-label-text">Expected CTC (LPA):</label>
+            <input type="number" id="prof-expected-ctc" class="input-control" value="8">
+          </div>
+        </div>
+        <div class="form-field" style="margin-top: 14px;">
+          <label class="form-label-text">Highest Degree & Institution:</label>
+          <input type="text" id="prof-highest-edu" class="input-control">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 4: ENGINE SETTINGS ================= -->
+    <section id="tab-settings" class="tab-view">
+      <div class="card-slate" style="max-width: 820px; margin: 0 auto;">
+        <div class="card-slate-header">
+          <div>
+            <h2 style="font-size: 19px; font-weight: 800; color: #fff; letter-spacing: -0.02em;">Engine Settings & Session Persistence</h2>
+            <p style="font-size: 12px; color: var(--text-tertiary); margin-top: 2px;">Session memory, browser isolation, and operational protocols</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px;">Dual-Channel Browser Isolation & Authentication Cache</h3>
+          <p style="font-size: 12px; color: var(--text-tertiary); margin-bottom: 14px; line-height: 1.6;">
+            Naukri and LinkedIn run in completely isolated, persistent browser profiles (<b>chrome-profile-naukri</b> and <b>chrome-profile-linkedin</b>). You can log in with two distinct Google/Gmail accounts without session conflicts. Sessions persist permanently and are <b>never deleted</b> unless you selectively purge them below:
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button id="btn-reset-naukri" class="btn-core" style="background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.4); color: #38bdf8;">
+              🔵 Purge Naukri Session (Gmail #1)
+            </button>
+            <button id="btn-reset-linkedin" class="btn-core" style="background: rgba(10, 102, 194, 0.15); border: 1px solid rgba(10, 102, 194, 0.4); color: #60a5fa;">
+              🔗 Purge LinkedIn Session (Gmail #2)
+            </button>
+            <button id="btn-reset-session" class="btn-core btn-danger-rose">
+              🗑️ Purge All Stored Sessions
+            </button>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+          <h3 style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px;">Operational Protocol Highlights:</h3>
+          <ul style="color: var(--text-tertiary); font-size: 12px; margin-left: 18px; line-height: 1.8;">
+            <li><b>Resume Vectorization:</b> The integrated NLP engine maps your technical proficiencies, education, and credentials against hiring criteria.</li>
+            <li><b>Channel Authentication:</b> Authenticate via the portal cards. Your sessions persist locally in the enterprise browser profile.</li>
+            <li><b>Matrix Filtering:</b> Set target roles and experience parameters to filter relevant requisitions.</li>
+            <li><b>Autonomous Execution:</b> The engine navigates active requisitions, computes ATS scores, answers screening questions, and submits applications end-to-end.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global System Footer & Attribution -->
+    <footer style="margin-top: 48px; padding: 24px 0 36px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-tertiary); flex-wrap: wrap; gap: 12px;">
+      <div>
+        <span style="font-weight: 700; color: #fff;">Raushonix AI</span> · Proprietary Autonomous Career & Job Dispatch Architecture
+        <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 3px;">Designed, Invented & Engineered by <b>Abhiraj Raushan</b></div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="https://github.com/Abhirajraushan" target="_blank" style="color: var(--text-secondary); text-decoration: none;">GitHub</a>
+        <a href="https://linkedin.com/in/abhiraj-raushan" target="_blank" style="color: var(--text-secondary); text-decoration: none;">LinkedIn</a>
+        <span class="proprietary-pill" style="color: #818cf8; border-color: rgba(99, 102, 241, 0.4);">PATENT READY</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ================= INTERVIEW PREPARATION & JOB DOSSIER MODAL ================= -->
+  <div id="interview-dossier-modal" style="display: none; position: fixed; inset: 0; background: rgba(5, 8, 16, 0.88); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: #0d1117; border: 1px solid rgba(99, 102, 241, 0.35); border-radius: 16px; width: 100%; max-width: 820px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 24px 60px rgba(0,0,0,0.85); overflow: hidden;">
+      
+      <!-- Modal Header -->
+      <div style="padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); background: radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.15) 0%, rgba(13, 17, 23, 1) 100%); display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span id="dossier-status-badge" class="chip-status chip-status-success" style="font-size: 11px; padding: 3px 9px;">👁️ Viewed by HR</span>
+            <span id="dossier-date-badge" style="font-size: 11.5px; color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 4px; padding: 2px 7px; font-weight: 600;">📅 Nov 09, 2026</span>
+          </div>
+          <h2 id="dossier-company-name" style="margin: 8px 0 2px 0; font-size: 21px; font-weight: 800; color: #fff; letter-spacing: -0.02em;">Relevance Lab</h2>
+          <div id="dossier-role-title" style="font-size: 13.5px; color: #94a3b8; font-weight: 600;">Agentic AI Forward Deployed Engineer (FDE)</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+          <a id="dossier-job-link" href="#" target="_blank" class="btn-core" style="background: rgba(99, 102, 241, 0.2); border: 1px solid rgba(99, 102, 241, 0.5); color: #c7d2fe; padding: 7px 14px; font-size: 12px; font-weight: 700; text-decoration: none;">
+            🌐 Open Posting on Naukri
+          </a>
+          <button id="btn-close-dossier" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #94a3b8; font-size: 18px; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div style="padding: 22px 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 18px;">
+        
+        <!-- Grid: Applied Resume & Key Parameters -->
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px;" class="grid-2col-responsive">
+          
+          <!-- Attached Resume Card -->
+          <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 14px;">
+            <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #38bdf8; margin-bottom: 8px;">
+              📄 Attached Resume Used For Application
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: #38bdf8; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+              <div style="min-width: 0;">
+                <div id="dossier-resume-name" style="font-size: 13px; font-weight: 700; color: #f8fafc; word-break: break-all;">
+                  resume_1794222054_Abhiraj_______Resume.pdf
+                </div>
+                <div style="font-size: 11px; color: #34d399; font-weight: 600; margin-top: 2px;">
+                  ✓ Backend & AI Systems Focus
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Requisition Parameters -->
+          <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 14px;">
+            <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #a78bfa; margin-bottom: 8px;">
+              🎯 Role Location & Experience
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; font-size: 12px;">
+              <div><span style="color: #64748b;">Location:</span> <span id="dossier-location" style="color: #f1f5f9; font-weight: 700;">Bhubaneswar</span></div>
+              <div><span style="color: #64748b;">Experience Required:</span> <span id="dossier-experience" style="color: #f1f5f9; font-weight: 700;">0 - 5 Years</span></div>
+              <div><span style="color: #64748b;">Compensation / Salary:</span> <span id="dossier-salary" style="color: #34d399; font-weight: 700;">₹ 6 - 12 LPA</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Job Description & Required Tech Stack -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #f1f5f9; margin-bottom: 8px;">
+            📋 Job Description & Key Responsibilities
+          </div>
+          <p id="dossier-description" style="font-size: 13px; color: #cbd5e1; line-height: 1.6; margin: 0 0 14px 0;">
+            Job description details will appear here.
+          </p>
+          <div style="font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 6px;">REQUIRED TECH STACK:</div>
+          <div id="dossier-tech-stack" style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <!-- Tech badges -->
+          </div>
+        </div>
+
+        <!-- Screener Questions & Submitted Answers -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #38bdf8; margin-bottom: 10px;">
+            💬 Recruiter Screening Questions & Answers Submitted
+          </div>
+          <div id="dossier-qa-list" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Q&A pairs -->
+          </div>
+        </div>
+
+        <!-- Strategic Interview Preparation Tips -->
+        <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 12px; padding: 16px;">
+          <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #a5b4fc; margin-bottom: 8px;">
+            💡 High-Probability Interview Topics & Key Preparation Brief
+          </div>
+          <ul id="dossier-tips-list" style="margin: 0; padding-left: 20px; font-size: 12.5px; color: #e2e8f0; line-height: 1.7;">
+            <!-- Tips -->
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div style="padding: 14px 24px; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(13, 17, 23, 0.95); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11.5px; color: #64748b;">
+          Candidate: <b>Abhiraj Raushan</b> · Official Interview Readiness Dossier
+        </span>
+        <button id="btn-dossier-done" class="btn-core btn-primary-indigo" style="padding: 7px 18px; font-size: 12px; cursor: pointer;">
+          Done / Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="toast-outlet"></div>
+
+  <script src="/static/js/app.js?v=20261110_linkedin_multichannel"></script>
+</body>
+</html>

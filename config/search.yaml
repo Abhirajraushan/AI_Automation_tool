@@ -1,0 +1,105 @@
+naukri:
+  search_urls: []
+  queries:
+  - keywords: cybersecurity analyst
+    locations: &id001
+    - Bhubaneswar
+    - Remote
+    experience: 2
+  - keywords: security engineer
+    locations: *id001
+    experience: 2
+  - keywords: soc analyst
+    locations: *id001
+    experience: 2
+  - keywords: information security engineer
+    locations: *id001
+    experience: 2
+  - keywords: full stack developer
+    locations: *id001
+    experience: 2
+  - keywords: software engineer
+    locations: *id001
+    experience: 2
+  departments: []
+  work_mode: all
+  job_age_days: 15
+  pages_per_query: 3
+  sort_by_date: true
+linkedin:
+  search_urls: []
+  queries:
+  - keywords: cybersecurity analyst
+    locations: *id001
+  - keywords: security engineer
+    locations: *id001
+  - keywords: soc analyst
+    locations: *id001
+  - keywords: information security engineer
+    locations: *id001
+  - keywords: full stack developer
+    locations: *id001
+  - keywords: software engineer
+    locations: *id001
+  experience_levels:
+  - 2
+  - 3
+  employment_type: full_time
+  date_posted: week
+  easy_apply_only: true
+  pages_per_query: 3
+  work_mode: all
+mycareernet:
+  search_urls: []
+  queries:
+  - keywords: java developer
+    locations:
+    - ''
+    experience: 2
+  - keywords: golang developer
+  - keywords: backend developer
+  - keywords: software engineer
+  pages_per_query: 8
+teamlease:
+  search_urls: []
+  queries:
+  - keywords: java developer
+    locations:
+    - ''
+    experience: 2
+  - keywords: software developer
+  - keywords: software development
+  - keywords: full stack developer
+  scrolls: 6
+randstad:
+  search_urls:
+  - https://www.randstad.in/jobs/s-it/s2-software-and-application-developers/
+  - https://www.randstad.in/jobs/s-it/
+  queries: []
+  experience: 2
+  pages_per_query: 5
+filters:
+  strict_stack: true
+  exclude_titles: []
+external:
+  enabled: false
+limits:
+  daily_cap: 250
+  daily_cap_by_site:
+    linkedin: 250
+    naukri: 250
+  min_match_score: 75
+  ask_low_match_software: true
+delays:
+  action:
+  - 0.6
+  - 1.8
+  between_jobs:
+  - 2
+  - 5
+review:
+  confirm_before_apply: true
+  auto_accept_known: true
+  auto_accept_confidence: 0.85
+strict_location: true
+work_mode: all

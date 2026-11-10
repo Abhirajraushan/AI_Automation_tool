@@ -1,0 +1,51 @@
+# Python & Virtual Environments
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Environment Variables & Secrets
+.env
+*.env
+config/.env
+
+# Local Application Data, Database, Logs & Chrome Browser Sessions
+data/
+data/**
+data/applications.db
+data/applications.csv
+data/runner.log
+data/naukri_actions.json
+data/naukri_profile_resume.txt
+data/chrome-profile-*/
+
+# Resumes, CVs and Documents (Prevents personal data leakage)
+resume/*.pdf
+resume/*.docx
+*.pdf
+*.docx
+backend_resume/
+cybersecurity_resume/
+
+# Candidate-Specific Local Profile Configurations
+config/profile.yaml
+config/profile_*.yaml
+config/search_backend.yaml
+config/search_cybersecurity.yaml
+
+# Temporary Scratch Scripts & Dumped Webpages
+scratch/
+scratch/**
+
+# Operating System & IDE Artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+=

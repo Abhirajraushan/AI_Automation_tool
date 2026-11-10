@@ -1,0 +1,34 @@
+# Raushonix AI — Candidate Profile Template
+# When you upload a resume in the Web Dashboard, your profile is automatically generated & populated.
+resume_path: "resume/resume.pdf"
+
+personal:
+  full_name: "Candidate Name"
+  email: "candidate@example.com"
+  phone: "9876543210"
+  current_city: "Bengaluru"
+  linkedin_url: "https://linkedin.com/in/candidate"
+  github_url: "https://github.com/candidate"
+
+skills:
+  - Python
+  - Java
+  - JavaScript
+  - SQL
+  - Git
+  - Docker
+  - REST APIs
+  - React
+  - Spring Boot
+
+experience:
+  total_years: 2
+  highest_education: "B.Tech in Computer Science"
+  current_company: "Tech Solutions Inc."
+  current_title: "Software Engineer"
+
+screening:
+  expected_ctc_lpa: 8
+  current_ctc_lpa: 4
+  notice_period_days: 30
+  relocation: "Yes, Open"
