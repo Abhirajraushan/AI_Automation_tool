@@ -84,6 +84,50 @@ Manage browser state and privacy controls:
 
 ---
 
+## 🔄 Automated Resume Synchronization & Dynamic Application Engine
+
+### How Your Uploaded Resume Controls the Entire Automation Pipeline
+
+Whenever you drag and drop a new or updated resume (`.pdf` or `.docx`) into the Web Dashboard, **the system dynamically recalibrates every single application layer to match that exact document**:
+
+```mermaid
+flowchart LR
+    A["📂 Upload Resume (PDF/DOCX)"] --> B["🧠 NLP Ingestion & Skill Matrix"]
+    B --> C["☁️ Naukri Live Profile Sync"]
+    B --> D["📎 LinkedIn Easy Apply CV Attachment"]
+    B --> E["📝 Dynamic Screening Question Answering"]
+    B --> F["🎯 Target Role & ATS Score Realignment"]
+```
+
+#### 1. Instant NLP Vectorization & Local Vault Storage
+* When you drop a document into the dashboard, it is stored in your local encrypted vault (`data/resumes/`) and mirrored as the active candidate document (`resume/resume.pdf`).
+* The built-in NLP engine parses raw text into structured attributes:
+  * **Core Proficiencies**: Programming languages, cloud platforms, frameworks, and databases.
+  * **Experience Metrics**: Total years of industry experience.
+  * **Contact & Education Credentials**: Contact details, university, and highest qualification.
+
+#### 2. Automatic Live Naukri Profile Synchronization
+* Unlike static bots that submit applications disconnected from your portal profile, **AutoJob-AI directly audits your live Naukri account**.
+* Before running applications, it compares the active resume in the dashboard against the resume currently attached to your official Naukri profile.
+* If a new resume is detected, the bot automatically navigates to your Naukri account settings, uploads the document, and sets it as the active CV on your live Naukri profile so recruiters always see the matching resume.
+
+#### 3. LinkedIn Easy Apply Document Attachment
+* During multi-step LinkedIn Easy Apply modal flows, the engine automatically selects and attaches the exact active resume file from your local storage.
+
+#### 4. Context-Aware Screening Questions (Zero Contradictions)
+* Screening questions regarding technical proficiency (e.g. *"How many years of experience do you have with Go / Python / React / Kubernetes?"*) are cross-referenced directly against the skills parsed from your active resume.
+* If the skill is present on your uploaded resume, it responds `Yes` with your calculated years of experience; if absent, it accurately indicates your genuine familiarity, preventing ATS disqualification.
+
+#### 5. Instant Search Recalibration & Multi-Resume Switching
+* Have separate resumes for different roles (e.g. **Full Stack Developer** vs. **Cybersecurity / Systems Engineer**)?
+* Simply drag and drop your alternative resume into the dashboard. Within 2 seconds, the entire system switches:
+  * Target search queries shift automatically.
+  * ATS match criteria adapt to the new domain.
+  * Screening answers recalculate based on the new skill set.
+  * **Zero server restart required.**
+
+---
+
 ## 🏗️ Architecture & Operational Workflow
 
 ```mermaid
