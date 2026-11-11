@@ -10,7 +10,7 @@
 [![Naukri](https://img.shields.io/badge/Naukri.com-1--Click%20Apply-275DF5.svg)](https://www.naukri.com/)
 [![Web UI](https://img.shields.io/badge/Web%20Dashboard-Port%205000-61dafb.svg)](http://localhost:5000)
 [![Privacy First](https://img.shields.io/badge/Privacy-100%25%20Local%20%26%20Isolated-success.svg)](#-privacy--local-session-isolation)
-[![Stars](https://img.shields.io/github/stars/Abhirajraushan/AI_Automation_tool?style=social)](https://github.com/Abhirajraushan/AI_Automation_tool/stargazers)
+[![Stars](https://img.shields.io/github/stars/Abhirajraushan/AutoJob-AI-LinkedIn-Naukri-Bot?style=social)](https://github.com/Abhirajraushan/AutoJob-AI-LinkedIn-Naukri-Bot/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](#license)
 
 ---
@@ -173,8 +173,8 @@ When anyone clones this repository:
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/Abhirajraushan/AI_Automation_tool.git
-cd AI_Automation_tool
+git clone https://github.com/Abhirajraushan/AutoJob-AI-LinkedIn-Naukri-Bot.git
+cd AutoJob-AI-LinkedIn-Naukri-Bot
 ```
 
 ### 3. Automated 1-Click Setup (For Non-Technical Users)
